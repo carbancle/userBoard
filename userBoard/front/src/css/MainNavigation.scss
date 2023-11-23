@@ -1,0 +1,41 @@
+@charset 'UTF-8';
+
+.main_navigation {
+  background-color: #343a40;
+  height: 50px;
+  color: white;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      display: flex;
+  
+      div {
+        display: flex;
+        align-items: center;
+        height: 50px;
+      }
+    }
+  
+    nav {
+      display: flex;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 50px;
+    
+        li:first-child {
+          margin-right: 12px;
+        }
+      }
+
+      button {
+        color: white;
+      }
+    }
+  }
+}

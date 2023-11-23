@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.create_account_form {
+  margin: 24px 0;
+  padding: 24px 12px 48px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+
+  form {
+    div {
+      margin-bottom: 12px;
+
+      > label {
+        width: 140px;
+        margin-right: 8px;
+      }
+    }
+
+    .submit_button > button {
+      font-weight: 600;
+    }
+  }
+}
