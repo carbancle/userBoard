@@ -45,7 +45,7 @@ public class WebSecurityConfig {
 			.authorizeHttpRequests((request) -> request
 					.requestMatchers(
 						"/", "index.html", "/static/**", "/*.ico", "/*.json", "/*.png", 
-						"auth/**"
+						"auth/**", "/article/**", "/recommend/**", "/comment/**"
 					).permitAll()
 					.anyRequest().authenticated()
 			)
