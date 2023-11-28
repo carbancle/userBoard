@@ -3,12 +3,13 @@ import AuthContext from '../../store/auth-context'
 import CommentContext from '../../store/comment-context'
 import ToasterContext from '../../ui/toaster-context'
 import Comment from './Comment'
+import { Forum } from '@mui/icons-material'
 
 type CommentInfo = {
   commentId: number,
   memberNickname: string,
   commentBody: string,
-  createAt: Date,
+  createdAt: Date,
   written: boolean,
   onDelete?: (id: string) => void
 }
@@ -74,20 +75,23 @@ function CommentList(props: any) {
     if (comments!.length > 0) {
       console.log("if start", comments);
       media = (
-        <ul>
-          {comments.map((comment) => {
-            return (
-              <Comment key={comment.commentId}
-                commentId={comment.commentId}
-                memberNickname={comment.memberNickname}
-                commentBody={comment.commentBody}
-                createAt={comment.createAt}
-                written={comment.written}
-                onDelete={deleteComment}
-              />
-            )
-          })}
-        </ul>
+        <>
+          <span className='title'><Forum /> 댓글</span>
+          <ul>
+            {comments.map((comment) => {
+              return (
+                <Comment key={comment.commentId}
+                  commentId={comment.commentId}
+                  memberNickname={comment.memberNickname}
+                  commentBody={comment.commentBody}
+                  createdAt={comment.createdAt}
+                  written={comment.written}
+                  onDelete={deleteComment}
+                />
+              )
+            })}
+          </ul>
+        </>
       )
     } else {
       console.log("if fail", comments);

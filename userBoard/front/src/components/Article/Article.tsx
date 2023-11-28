@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import CommentList from './CommentList';
+import Recommend from './Recommend';
 
 function Article(props: any) {
   let navigate = useNavigate();
@@ -25,23 +27,33 @@ function Article(props: any) {
 
   return (
     <div className='article'>
-      <header>
-        <h4>{props.item!.articleTitle}</h4>
-        <div>
-          <span>이름: {props.item!.memberNickname}</span><br />
-          <span>날짜: {props.item!.updateAt}</span>
+      <div className="container">
+        <header className='title'>
+          <h4>{props.item!.articleTitle}</h4>
+          <div className='detail'>
+            <span className='nickname'>이름: {props.item!.memberNickname}</span><br />
+            <span className='updated_date'>작성일: {props.item!.updatedAt}</span>
+          </div>
+        </header>
+        <div className='content_box'>
+          <div>{props.item!.articleBody}</div>
         </div>
-      </header>
-      <div>
-        <div>{props.item!.articleBody}</div>
+        <div className="recommend_box">
+          <Recommend item={id} />
+        </div>
+        <div className="comment_box">
+          <CommentList item={id} />
+        </div>
+        <div className="button_box">
+          <button onClick={backHandler}>뒤로</button>
+          {props.item!.isWritten &&
+            <div>
+              <button className='update' onClick={updateHandler}>수정</button><br />
+              <button className='danger' onClick={deleteHandler}>삭제</button>
+            </div>
+          }
+        </div>
       </div>
-      <button onClick={backHandler}>뒤로</button>
-      {props.item!.isWritten &&
-        <div>
-          <button onClick={updateHandler}>수정</button><br />
-          <button onClick={deleteHandler}>삭제</button>
-        </div>
-      }
     </div>
   )
 }

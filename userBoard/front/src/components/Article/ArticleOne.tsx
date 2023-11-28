@@ -2,6 +2,7 @@ import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ArticleContext from '../../store/article-context';
 import AuthContext from '../../store/auth-context';
+import "../../css/ArticleContent.scss"
 import Article from './Article';
 
 type ArticleInfo = {
@@ -9,8 +10,8 @@ type ArticleInfo = {
   memberNickname: string,
   articleTitle: string,
   articleBody?: string,
-  createAt: string,
-  updateAt?: string,
+  createdAt: string,
+  updatedAt?: string,
   isWritten?: boolean
 }
 
@@ -49,7 +50,7 @@ function ArticleOne(props: any) {
     if (articleCtx.isSuccess) {
       return () => {
         setArticle(articleCtx.article);
-        console.log(article?.createAt);
+        console.log(article?.createdAt);
         setIsLoading(true);
       }
     }

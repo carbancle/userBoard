@@ -1,6 +1,7 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { Link, /*useNavigate*/ } from 'react-router-dom'
 import { Button } from 'react-bootstrap';
+import "../../css/Article.scss";
 import ArticleContext from '../../store/article-context';
 import AuthContext from '../../store/auth-context';
 import Paging from './Paging';
@@ -10,8 +11,8 @@ type ArticleInfo = {
   memberNickname: string,
   articleTitle: string,
   articleBody?: string,
-  createAt: string,
-  updateAt?: string,
+  createdAt: string,
+  updatedAt?: string,
   isWritten?: boolean
 }
 
@@ -54,8 +55,8 @@ function ArticleList(props: any) {
     return (
       <tr key={list.articleId}>
         <td><Link to={`/article/${list.articleId}`}>{list.articleTitle}</Link></td>
-        <td>{list.memberNickname}</td>
-        <td>{list.createAt}</td>
+        <td className='writer'>{list.memberNickname}</td>
+        <td className='updated_date'>{list.createdAt}</td>
       </tr>
     )
   })
@@ -70,13 +71,13 @@ function ArticleList(props: any) {
 
 
   return (
-    <div className='article_list'>
+    <div className='article_list container'>
       <table>
         <thead>
           <tr>
             <td>제목</td>
-            <td>작성자</td>
-            <td>등록일</td>
+            <td width="10%">작성자</td>
+            <td width="20%">등록일</td>
           </tr>
         </thead>
         <tbody>
