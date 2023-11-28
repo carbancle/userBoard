@@ -11,9 +11,11 @@ function Comment(props: any) {
 
   return (
     <li className='comment'>
-      <h4 className=''>{props.memberNickname}</h4>
+      <div className='header'>
+        <span>{props.memberNickname}</span>
+        <span>{props.createdAt}</span>
+      </div>
       <p>{props.commentBody}</p>
-      <p>{props.createAt}</p>
       <form onSubmit={submitDeleteHandler}>
         <input type="hidden" name="comment_id" value={props.commentId} ref={deleteIdRef} />
         {props.written && <button type="submit">삭제</button>}

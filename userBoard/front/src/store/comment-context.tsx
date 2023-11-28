@@ -5,7 +5,7 @@ type CommentInfo = {
   commentId: number,
   memberNickname: string,
   commentBody: string,
-  createAt: Date,
+  createdAt: Date,
   written: boolean
 }
 

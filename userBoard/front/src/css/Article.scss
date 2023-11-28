@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+.text-center{
+  text-align: center;
+}
+
+.article_list {
+  margin-top: 30px;
+
+  table {
+    width: 100%;
+    border-top: 1px solid #ddd;
+
+    thead td {
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+
+    td{
+      border-bottom: 1px solid #ddd;
+      padding: 6px 8px;
+
+      a:hover{
+        text-decoration: underline;
+      }
+
+    }
+    
+    .writer, .updated_date {
+      font-size: 0.9rem;
+    }
+  }
+
+  .pagination {
+    margin-top: 8px;
+    justify-content: center;
+
+    .page-item.active {
+      .page-link {
+        border-color: #00a495;
+        background-color: #eee;
+      }
+    }
+    
+    .page-link {
+      border-radius: initial;
+      border: 1px solid #bbb;
+      background: initial;
+      padding: 0.5rem 0.6rem;
+      color: #000;
+      font-size: 14px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #eee;
+      }
+    }
+  }
+}

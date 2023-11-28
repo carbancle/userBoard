@@ -62,9 +62,11 @@ function Recommend(props: any) {
 
   if (isLoading && recommends) {
     media = (
-      <div>
-        {recommends.recommended ? <button onClick={changeRecommend}><Favorite /></button> : <button onClick={changeRecommend}><FavoriteBorder /></button>}
-        <h4>좋아요 {recommends.recommendNum}</h4>
+      <div className="vote_box">
+        <div>
+          {recommends.recommended ? <button onClick={changeRecommend}><Favorite /><h4>추천 {recommends.recommendNum}</h4></button> : <button onClick={changeRecommend}><FavoriteBorder /><h4>추천 {recommends.recommendNum}</h4></button>}
+
+        </div>
       </div>
     )
   }

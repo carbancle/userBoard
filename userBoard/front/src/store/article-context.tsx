@@ -6,8 +6,8 @@ type ArticleInfo = {
   memberNickname: string,
   articleTitle: string,
   articleBody: string,
-  createAt: string,
-  updateAt: string,
+  createdAt: string,
+  updatedAt: string,
   isWritten?: boolean
 }
 
