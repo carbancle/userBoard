@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.create_account_form {
+.auth_form {
   max-width: 640px;
   margin: 24px auto;
   padding: 24px 12px 64px;
@@ -17,13 +17,13 @@
     max-width: 480px;
 
     div {
-      display: flex;
+      display:flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 12px;
 
       > label {
-        width: 25%;
+        width: 20%;
         margin-right: 8px;
         text-align: right;
       }
@@ -33,11 +33,17 @@
       }
     }
 
-    .submit_button {
+    .auth_button {
       float: right;
-    
+
       > button {
+        margin-left: 6px;
         font-weight: 600;
+      }
+
+      > a {
+        font-weight: 600;
+        color: #333;
       }
     }
   }

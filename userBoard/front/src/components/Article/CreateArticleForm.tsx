@@ -1,6 +1,7 @@
 import React, { useState, useContext, useRef, useCallback, useEffect } from 'react'
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'
+import "../../css/CreateArticleForm.scss";
 import ArticleContext from '../../store/article-context';
 import AuthContext from '../../store/auth-context';
 
@@ -75,24 +76,28 @@ function CreateArticleForm(props: any) {
 
   return (
     <div className='create_article_form'>
-      <Form onSubmit={submitHandler}>
-        <Form.Group>
-          <Form.Label>제목</Form.Label>
-          <Form.Control
-            type="text" placeholder='제목을 입력하세요' required ref={titleRef} defaultValue={updateArticle.title}
-          />
-        </Form.Group>
-        <br />
-        <Form.Group>
-          <Form.Label>본문</Form.Label>
-          <Form.Control
-            as="textarea" rows={20} required ref={mainRef} defaultValue={updateArticle.body}
-          />
-        </Form.Group>
-        <br />
-        <Button variant='cancel'>취소</Button>
-        <Button variant='primary' type='submit'>작성</Button>
-      </Form>
+      <div className="container">
+        <h1>글쓰기</h1>
+        <Form onSubmit={submitHandler}>
+          <Form.Group className='title'>
+            <Form.Label>제목</Form.Label>
+            <Form.Control
+              type="text" placeholder='제목을 입력하세요' required ref={titleRef} defaultValue={updateArticle.title}
+            />
+          </Form.Group>
+          <Form.Group className='content'>
+            <Form.Label>본문</Form.Label>
+            <Form.Control
+              as="textarea" rows={20} required ref={mainRef} defaultValue={updateArticle.body}
+            />
+          </Form.Group>
+          <br />
+          <div className='button_box'>
+            <Button variant='cancel'>취소</Button>
+            <Button variant='primary' type='submit'>작성</Button>
+          </div>
+        </Form>
+      </div>
     </div>
   )
 }

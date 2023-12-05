@@ -5,6 +5,7 @@ import "../../css/Article.scss";
 import ArticleContext from '../../store/article-context';
 import AuthContext from '../../store/auth-context';
 import Paging from './Paging';
+import { EditNote } from '@mui/icons-material';
 
 type ArticleInfo = {
   articleId: number,
@@ -84,10 +85,10 @@ function ArticleList(props: any) {
           {articleList}
         </tbody>
       </table>
-      <div>
+      <div className='create_btn'>
         {isLogin &&
           <Link to="/create">
-            <Button>글 작성</Button>
+            <Button><EditNote />글쓰기</Button>
           </Link>}
       </div>
       <Paging currentPage={Number(pageId)} maxPage={maxNum} />

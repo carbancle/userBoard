@@ -1,4 +1,6 @@
+import { ArrowForward, ArrowForwardIos } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react'
+import "../../css/StartingPage.scss";
 import AuthContext from '../../store/auth-context';
 
 function StartingPage() {
@@ -35,13 +37,52 @@ function StartingPage() {
 			{!isLogin ?
 				<div className='main_guest'>
 					<p>홈페이지 방문을 환영합니다 !!</p>
-					<a href="./page/1">게시판으로 이동</a>
+					<a href="./page/1">게시판으로 이동 <ArrowForward className='arrow_icon' /></a>
 				</div> :
 				<div className='main_user'>
 					<p>{nickname} 님 환영합니다!</p>
-					<a href="./page/1">게시판으로 이동</a>
+					<a href="./page/1">게시판으로 이동 =&gt;</a>
 				</div>
 			}
+			<div className="row gy-4">
+
+				<div className="col-sm-6 main_column">
+					<div className="main_box">
+						<div className="title">
+							<a href="/page/1">
+								<h1>게시판</h1>
+								<span><ArrowForwardIos /></span>
+							</a>
+						</div>
+						<div className="content">총 30개의 글</div>
+					</div>
+				</div>
+
+				<div className="col-sm-6 main_column">
+					<div className="main_box">
+						<div className="title">
+							<a href="/page/1">
+								<h1>게시판</h1>
+								<span><ArrowForwardIos /></span>
+							</a>
+						</div>
+						<div className="content">총 30개의 글</div>
+					</div>
+				</div>
+
+				<div className="col-sm-6 main_column">
+					<div className="main_box">
+						<div className="title">
+							<a href="/page/1">
+								<h1>게시판</h1>
+								<span><ArrowForwardIos /></span>
+							</a>
+						</div>
+						<div className="content">총 30개의 글</div>
+					</div>
+				</div>
+
+			</div>
 		</div>
 	)
 }
