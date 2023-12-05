@@ -18,7 +18,7 @@ function Comment(props: any) {
       <p>{props.commentBody}</p>
       <form onSubmit={submitDeleteHandler}>
         <input type="hidden" name="comment_id" value={props.commentId} ref={deleteIdRef} />
-        {props.written && <button type="submit">삭제</button>}
+        {props.written && <div className='submit_box'><button type="submit">삭제</button></div>}
       </form>
     </li>
   )

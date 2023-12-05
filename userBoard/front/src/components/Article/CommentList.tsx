@@ -104,9 +104,11 @@ function CommentList(props: any) {
       {media}
       {isLogin &&
         <form onSubmit={createComment} className="comment_submit">
-          <label className='comment_nickname'>{authCtx.userObj.nickname}</label>
-          <textarea name="comment" className='comment_area' cols={100} rows={3} ref={commentRef}></textarea>
-          <input type="submit" className='submit_btn' />
+          <label className='comment_nickname'>댓글 작성 {authCtx.userObj.nickname}</label>
+          <textarea name="comment" className='comment_area' cols={100} rows={5} ref={commentRef}></textarea>
+          <div className='submit_box'>
+            <button type="submit" className='submit_btn' >등록</button>
+          </div>
         </form>
       }
     </div>

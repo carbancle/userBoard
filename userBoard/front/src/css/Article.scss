@@ -56,4 +56,23 @@
       }
     }
   }
+
+  .create_btn {
+    margin-top: 12px;
+    text-align: right;
+
+    button {
+      text-align: center;
+      background: transparent;
+      border-color: #ccc;
+      border-radius: 0;
+      font-size: 14px;
+      color: #000;
+
+      &:hover {
+        transform: all 1s;
+        background: #ccc;
+      }
+    }
+  }
 }

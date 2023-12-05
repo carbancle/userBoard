@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import "../../css/AuthForm.scss";
 import AuthContext from '../../store/auth-context';
 import ToasterContext from '../../ui/toaster-context';
 
@@ -36,24 +37,26 @@ function AuthForm() {
   }
 
   return (
-    <section className='auth_form'>
-      <h1>Login</h1>
-      <form onSubmit={submitHandler}>
-        <div className="auth_email">
-          <label htmlFor="email">Your Email</label>
-          <input type="email" id='email' required ref={emailInputRef} />
-        </div>
-        <div className="auth_password">
-          <label htmlFor="password">Your Password</label>
-          <input type="password" id='password' required ref={passwordInputRef} />
-        </div>
-        <div className="auth_button">
-          <button type='submit'>Login</button>
-          {isLoading && <p>Loading</p>}
-          <p>Create Account</p>
-        </div>
-      </form>
-    </section>
+    <div className="container">
+      <section className='auth_form'>
+        <h1>로그인</h1>
+        <form onSubmit={submitHandler}>
+          <div className="auth_email">
+            <label htmlFor="email">이메일</label>
+            <input type="email" id='email' required ref={emailInputRef} />
+          </div>
+          <div className="auth_password">
+            <label htmlFor="password">패스워드</label>
+            <input type="password" id='password' required ref={passwordInputRef} />
+          </div>
+          <div className="auth_button">
+            <a className='btn btn-warning' href="sign_up">회원 가입</a>
+            <button className='btn btn-primary' type='submit'>로그인</button>
+            {isLoading && <p>Loading...</p>}
+          </div>
+        </form>
+      </section>
+    </div>
   )
 }
 
