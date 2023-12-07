@@ -57,7 +57,7 @@ function ArticleList(props: any) {
       <tr key={list.articleId}>
         <td><Link to={`/article/${list.articleId}`}>{list.articleTitle}</Link></td>
         <td className='writer'>{list.memberNickname}</td>
-        <td className='updated_date'>{list.createdAt}</td>
+        <td className='updated_date'>{list.updatedAt}</td>
       </tr>
     )
   })

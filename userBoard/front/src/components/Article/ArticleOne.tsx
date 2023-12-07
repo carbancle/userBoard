@@ -12,7 +12,7 @@ type ArticleInfo = {
   articleBody?: string,
   createdAt: string,
   updatedAt?: string,
-  isWritten?: boolean
+  written?: boolean
 }
 
 function ArticleOne(props: any) {
@@ -50,7 +50,6 @@ function ArticleOne(props: any) {
     if (articleCtx.isSuccess) {
       return () => {
         setArticle(articleCtx.article);
-        console.log(article?.createdAt);
         setIsLoading(true);
       }
     }

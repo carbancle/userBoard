@@ -21,9 +21,12 @@ interface Ctx {
   article?: ArticleInfo | undefined,
   page: ArticleInfo[],
   isSuccess: boolean,
+  isWriting: boolean,
+  isUpdating: boolean,
   isGetUpdateSuccess: boolean,
   totalPages: number,
   getPageList: (pageId: string) => void;
+  getResentPageList: () => void;
   getArticle: (param: string, token?: string) => void;
   createArticle: (article: PostArticle, token: string) => void;
   getUpdateArticle: (token: string, param: string) => void;
@@ -35,9 +38,12 @@ const ArticleContext = React.createContext<Ctx>({
   article: undefined,
   page: [],
   isSuccess: false,
+  isWriting: false,
+  isUpdating: false,
   isGetUpdateSuccess: false,
   totalPages: 0,
   getPageList: () => { },
+  getResentPageList: () => { },
   getArticle: () => { },
   createArticle: () => { },
   getUpdateArticle: () => { },
@@ -52,12 +58,26 @@ function ArticleContextProvider(props: any) {
   const [page, setPage] = useState<ArticleInfo[]>([]);
   const [totalPages, setTotalPages] = useState<number>(0);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  const [isWriting, setIsWriting] = useState<boolean>(false);
+  const [isUpdating, setIsUpdating] = useState<boolean>(false);
   const [isGetUpdateSuccess, setIsGetUpdateSuccess] = useState<boolean>(false);
 
   const getPageHandler = async (pageId: string) => {
     setIsSuccess(false);
 
     const data = await articleAction.getPageList(pageId);
+    const page: ArticleInfo[] = data?.data.content;
+    const pages: number = data?.data.totalPages;
+
+    setPage(page);
+    setTotalPages(pages);
+    setIsSuccess(true);
+  }
+
+  const getResentPageHandler = async () => {
+    setIsSuccess(false);
+
+    const data = await articleAction.getResentPageList();
     const page: ArticleInfo[] = data?.data.content;
     const pages: number = data?.data.totalPages;
 
@@ -81,7 +101,7 @@ function ArticleContextProvider(props: any) {
   }
 
   const createArticleHandler = (article: PostArticle, token: string) => {
-    setIsSuccess(false);
+    setIsWriting(false);
 
     const data = articleAction.createArticle(token, article);
     data.then((result) => {
@@ -89,7 +109,7 @@ function ArticleContextProvider(props: any) {
         console.log(isSuccess);
       }
     })
-    setIsSuccess(true);
+    setIsWriting(true);
   }
 
   const getUpdateArticleHandler = async (token: string, param: string) => {
@@ -103,7 +123,7 @@ function ArticleContextProvider(props: any) {
   }
 
   const updateArticleHandler = (token: string, article: PostArticle) => {
-    setIsSuccess(false);
+    setIsUpdating(false);
     console.log('update api start');
 
     const data = articleAction.updateArticle(token, article);
@@ -112,7 +132,7 @@ function ArticleContextProvider(props: any) {
         console.log(isSuccess);
       }
     })
-    setIsSuccess(true);
+    setIsUpdating(true);
   }
 
   const deleteArticleHandler = (token: string, param: string) => {
@@ -120,7 +140,7 @@ function ArticleContextProvider(props: any) {
 
     const data = articleAction.deleteArticle(token, param);
     data.then((result) => {
-      if (result !== null) {
+      if (result == null) {
         console.log(isSuccess);
       }
     })
@@ -131,9 +151,12 @@ function ArticleContextProvider(props: any) {
     article,
     page,
     isSuccess,
+    isWriting,
+    isUpdating,
     isGetUpdateSuccess,
     totalPages,
     getPageList: getPageHandler,
+    getResentPageList: getResentPageHandler,
     getArticle: getArticleHandler,
     createArticle: createArticleHandler,
     getUpdateArticle: getUpdateArticleHandler,

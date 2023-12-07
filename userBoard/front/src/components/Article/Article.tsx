@@ -46,11 +46,11 @@ function Article(props: any) {
         </div>
         <div className="button_box">
           <button onClick={backHandler}>뒤로</button>
-          {props.item!.isWritten &&
-            <div>
-              <button className='update' onClick={updateHandler}>수정</button><br />
+          {props.item!.written &&
+            <>
+              <button className='update' onClick={updateHandler}>수정</button>
               <button className='danger' onClick={deleteHandler}>삭제</button>
-            </div>
+            </>
           }
         </div>
       </div>

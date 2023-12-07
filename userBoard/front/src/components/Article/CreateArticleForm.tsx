@@ -47,17 +47,14 @@ function CreateArticleForm(props: any) {
         })
       }
     },
-    [articleCtx.article, articleCtx.isGetUpdateSuccess],
+    [articleCtx.isGetUpdateSuccess],
   )
 
   useEffect(() => {
     if (props.item) {
-      return () => {
-        articleCtx.getUpdateArticle(authCtx.token, props.item)
-      }
+      articleCtx.getUpdateArticle(authCtx.token, props.item)
     }
-    return;
-  }, [articleCtx, authCtx.token, props.item])
+  }, [props.item])
 
   useEffect(() => {
     console.log('update effect')
@@ -65,14 +62,18 @@ function CreateArticleForm(props: any) {
   }, [setUpdateArticleHandler])
 
   useEffect(() => {
-    if (articleCtx.isSuccess) {
-      return () => {
-        console.log('writing success')
-        navigate("/page/1", { replace: true })
-      }
+    if (articleCtx.isWriting) {
+      console.log('writing success')
+      alert("글이 등록되었습니다")
+      navigate("/page/1", { replace: true })
     }
-    return;
-  }, [articleCtx.isSuccess, navigate])
+
+    if (articleCtx.isUpdating) {
+      console.log('updating success')
+      alert("글이 수정되었습니다")
+      navigate("/page/1", { replace: true })
+    }
+  }, [articleCtx.isWriting, articleCtx.isUpdating])
 
   return (
     <div className='create_article_form'>
