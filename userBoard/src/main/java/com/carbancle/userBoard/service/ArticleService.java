@@ -54,6 +54,10 @@ public class ArticleService {
 		return articleRepository.searchAll(PageRequest.of(pageNum - 1, 20));
 	}
 	
+	public Page<PageResponseDto> resentPageArticle(int pageNum) {
+		return articleRepository.searchAll(PageRequest.of(pageNum - 1, 5));
+	}
+	
 	@Transactional
 	public ArticleResponseDto postArticle(String title, String body) {
 		Member member = isMemberCurrent();

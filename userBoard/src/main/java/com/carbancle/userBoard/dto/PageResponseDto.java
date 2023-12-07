@@ -14,6 +14,7 @@ public class PageResponseDto {
 	private String articleTitle;
 	private String memberNickname;
 	private String createdAt;
+	private String updatedAt;
 	
 	public static PageResponseDto of(Article article) {
 		return PageResponseDto.builder()
@@ -21,6 +22,7 @@ public class PageResponseDto {
 				.articleTitle(article.getTitle())
 				.memberNickname(article.getMember().getNickname())
 				.createdAt(article.getCreatedAt().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")))
+				.updatedAt(article.getCreatedAt().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")))
 				.build();
 	}
 }

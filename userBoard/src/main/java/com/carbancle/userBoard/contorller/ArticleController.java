@@ -26,6 +26,11 @@ import lombok.RequiredArgsConstructor;
 public class ArticleController {
 	private final ArticleService articleService;
 	
+	@GetMapping("/resent")
+	public ResponseEntity<Page<PageResponseDto>> resentPageArticle(@RequestParam(name = "page") int page) {
+		return ResponseEntity.ok(articleService.resentPageArticle(page));
+	} 
+	
 	@GetMapping("/page")
 	public ResponseEntity<Page<PageResponseDto>> pageArticle(@RequestParam(name = "page") int page) {
 		return ResponseEntity.ok(articleService.pageArticle(page));
@@ -46,7 +51,7 @@ public class ArticleController {
 		return ResponseEntity.ok(articleService.oneArticle(id));
 	}
 	
-	@PutMapping("/change")
+	@PutMapping("/")
 	public ResponseEntity<ArticleResponseDto> putChangeArticle(@RequestBody ChangeArticleResponseDto request) {
 		return ResponseEntity.ok(articleService.changeArticle(request.getId(), request.getTitle(), request.getBody()));
 	}

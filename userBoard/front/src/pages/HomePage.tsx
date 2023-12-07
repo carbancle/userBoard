@@ -1,9 +1,12 @@
 import React from 'react'
 import StartingPage from '../components/StartingPage/StartingPage'
+import { ArticleContextProvider } from '../store/article-context'
 
 function HomePage() {
     return (
-        <StartingPage />
+        <ArticleContextProvider>
+            <StartingPage />
+        </ArticleContextProvider>
     )
 }
 

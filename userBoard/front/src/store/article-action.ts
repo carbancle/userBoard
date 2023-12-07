@@ -21,6 +21,13 @@ export const getPageList = (param: string) => {
     return response;
 }
 
+export const getResentPageList = () => {
+    const URL = "/article/resent?page=1";
+    const response = GET(URL, {})
+
+    return response;
+}
+
 export const getOneArticle = (param: string, token?: string) => {
     const URL = "/article/one?id=" + param;
     const response = (token ? GET(URL, createTokenHeader(token)) : GET(URL, {}));
