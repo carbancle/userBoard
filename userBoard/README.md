@@ -22,7 +22,7 @@
   
 - 메인화면(로그인 X)<br>
   회원가입, 로그인, 게시판 페이지로 이동 가능<br>
-  각 게시판에 전체 등록된 글 수를 보여준다
+  각 게시판에 등록된 글 중 최신 5개의 글을 보여준다
 <hr><br>
 <img alt="스크린샷 2023-12-05 214058.png" src="https://github.com/carbancle/userBoard/blob/master/img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-12-05%20214058.png?raw=true" data-hpc="true" class="Box-sc-g0xbh4-0 kzRgrI">
 
