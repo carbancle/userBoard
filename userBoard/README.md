@@ -27,7 +27,7 @@
 <img alt="스크린샷 2023-12-05 214058.png" src="https://github.com/carbancle/userBoard/blob/master/img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-12-05%20214058.png?raw=true" data-hpc="true" class="Box-sc-g0xbh4-0 kzRgrI">
 
 - 메인화면(로그인 O)<br>
-  가입한 유저의 닉네임이 우측 상단과 메인 페이지에 출력된다
+  로그인한 유저의 닉네임이 우측 상단과 메인 페이지에 출력된다
 <hr><br>
 <img alt="스크린샷 2023-12-05 214009.png" src="https://github.com/carbancle/userBoard/blob/master/img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-12-05%20214009.png?raw=true" data-hpc="true" class="Box-sc-g0xbh4-0 kzRgrI">
 
@@ -59,7 +59,8 @@
   등록된 게시글의 내용을 확인할 수 있다<br>
   추천 버튼을 클릭하여 글에 대한 추천이 가능하다<br>
   하단의 댓글 작성란을 통하여 댓글 입력이 가능하다<br>
-  추천과 댓글 작성의 경우 로그인을 했을 때만 등록 가능하다
+  추천과 댓글 작성의 경우 로그인을 했을 때만 등록 가능하다<br>
+  글을 작성한 작성자는 글 수정 또는 삭제가 가능하다
 <hr><br>
 <img alt="스크린샷 2023-12-05 224622.png" src="https://github.com/carbancle/userBoard/blob/master/img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-12-05%20224622.png?raw=true" data-hpc="true" class="Box-sc-g0xbh4-0 kzRgrI">
 
