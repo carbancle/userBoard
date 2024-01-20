@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.col {
+  margin-top: 20px;
+}
+
+.details > div {
+  margin-bottom: 16px;
+
+  span {
+    font-size: 14px;
+    color: #333;
+  }
+}
+
+.img {
+  float: left;
+  margin-right: 16px;
+
+  img {
+    min-width: initial;
+    width: 300px;
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.genres {
+  margin-right: 14px;
+}

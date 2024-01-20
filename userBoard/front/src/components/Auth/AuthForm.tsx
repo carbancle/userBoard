@@ -6,7 +6,7 @@ import ToasterContext from '../../ui/toaster-context';
 
 function AuthForm() {
   const authCtx = useContext(AuthContext);
-  const toasterCtx = useContext(ToasterContext);
+  // const toasterCtx = useContext(ToasterContext);
 
   let navigate = useNavigate();
 
@@ -25,15 +25,20 @@ function AuthForm() {
     try {
       authCtx.login(enteredEmail, enteredPassword);
 
-      toasterCtx.getToasts({ text: "로그인 성공", type: "success" })
-    } catch (event) {
-      toasterCtx.getToasts({ text: "로그인 실패, 아이디와 패스워드를 확인해주세요.", type: "error" })
+      // toasterCtx.getToasts({ text: "로그인 성공", type: "success" })
+      if (authCtx.isSuccess) {
+        navigate("/", { replace: true });
+      }
+    } catch (error) {
+      if (error.response.data.message) {
+        alert(error.response.data.message)
+      } else {
+        alert("ID가 존재하지 않거나 비밀번호가 일치하지 않습니다.")
+      }
     }
     setIsLoading(false);
 
-    if (authCtx.isSuccess) {
-      navigate("/", { replace: true });
-    }
+
   }
 
   return (

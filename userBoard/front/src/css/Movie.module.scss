@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+.col {
+  margin-top: 20px;
+}
+
+.card {
+  position: relative;
+  margin-top: 50px;
+  padding: 14px 16px;
+  min-height: 350px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, .8 );
+}
+
+.img {
+  position: absolute;
+  min-width: initial;
+  width: 120px;
+  top:-30px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .4 );
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin-top: -16px;
+  margin-bottom: 36px;
+  padding-left: 140px;
+  min-height: 137px;
+  font-size: 18px;
+  font-weight: bold;
+
+  h1 {
+    width: 100%;
+  }
+}
+
+
+.genres {
+  display: flex;
+  margin-top: 16px;
+
+  li {
+    font-size: 14px;
+    margin-right: 8px;
+  }
+}
