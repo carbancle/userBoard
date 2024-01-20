@@ -38,7 +38,8 @@ const fetchAuth = async (fetchData: FetchData) => {
         if (axios.isAxiosError(err)) {
             const serverError = err as AxiosError<ServerError>;
             if (serverError && serverError.response) {
-                console.log(serverError.response.data);
+                console.log(serverError);
+                console.log(serverError.response);
                 alert("failed!");
                 return null;
             }

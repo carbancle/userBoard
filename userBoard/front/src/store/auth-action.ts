@@ -42,7 +42,7 @@ export const retrieveStoredToken = () => {
 }
 
 export const signUpActionHandler = (email: string, password: string, nickname: string) => {
-    const URL = '/auth/signup'
+    const URL = '/auth/sign_up'
     const signupObject = {email, password, nickname};
 
     const response = POST(URL, signupObject, {});

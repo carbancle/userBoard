@@ -16,6 +16,10 @@ import ArticleListPage from './pages/ArticleListPage';
 import CreateArticlePage from './pages/CreateArticlePage';
 import UpdateArticlePage from './pages/UpdateArticlePage';
 import ArticleOnePage from './pages/ArticleOnePage';
+import TestApp from './components/practice/TestApp';
+import State from './components/movie/State';
+import MoviePage from './pages/movie/MoviePage';
+import MovieOnePage from './pages/movie/MovieOnePage';
 
 function App() {
 
@@ -34,6 +38,11 @@ function App() {
         <Route path="/page/:page_id" element={<ArticleListPage />} />
         <Route path="/update/:article_id" element={!authCtx.isLogin ? <Navigate to='/' /> : <UpdateArticlePage />} />
         <Route path="/article/:article_id" element={<ArticleOnePage />} />
+
+        <Route path="/test_app" element={<TestApp />} />
+        <Route path="/movie/coin_state" element={<State />} />
+        <Route path="/movie" element={<MoviePage />} />
+        <Route path="/movie/:id" element={<MovieOnePage />} />
       </Routes>
     </Layout>
   );

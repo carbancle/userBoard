@@ -1,4 +1,4 @@
-import { ArrowForward, ArrowForwardIos } from '@mui/icons-material';
+import { ArrowForwardIos } from '@mui/icons-material';
 import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import "../../css/StartingPage.scss";
@@ -87,15 +87,14 @@ function StartingPage() {
 					{/* <a href="./page/1">게시판으로 이동 =&gt;</a> */}
 				</div>
 			}
-			<div className="row gy-4">
-
+			<div className="row gy-4 start_page">
 				<div className="col-sm-6 main_column">
 					<div className="main_box">
 						<div className="title">
-							<a href="/page/1">
+							<Link to="/page/1">
 								<h1>게시판</h1>
 								<span><ArrowForwardIos /></span>
-							</a>
+							</Link>
 						</div>
 						<div className="content">
 							<table>
@@ -110,10 +109,10 @@ function StartingPage() {
 				<div className="col-sm-6 main_column">
 					<div className="main_box">
 						<div className="title">
-							<a href="#">
-								<h1>게시판2</h1>
+							<Link to="/movie">
+								<h1>Movie Info</h1>
 								<span><ArrowForwardIos /></span>
-							</a>
+							</Link>
 						</div>
 						<div className="content">작성된 글이 없습니다.</div>
 					</div>
@@ -126,10 +125,10 @@ function StartingPage() {
 				<div className="col-sm-6 main_column">
 					<div className="main_box">
 						<div className="title">
-							<a href="#">
+							<Link to="#">
 								<h1>게시판3</h1>
 								<span><ArrowForwardIos /></span>
-							</a>
+							</Link>
 						</div>
 						<div className="content">작성된 글이 없습니다.</div>
 					</div>
